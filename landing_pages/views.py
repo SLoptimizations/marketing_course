@@ -19,6 +19,22 @@ def personal_trainer_view(request):
         return render(request, 'task_landing_pages/personal-trainer-landing-page.html')
 
 
+def nespresso_thanku_link_view(request):
+    if request.method == "POST":
+        return render(request, 'task_landing_pages/nespresso-thanku-page.html')
+    return render(request, 'task_landing_pages/nespresso-landing-page-thanku.html')
+
+def shein_thanku_link_view(request):
+    if request.method == "POST":
+        return render(request, 'task_landing_pages/shain-thanku-page.html')
+    return render(request, 'task_landing_pages/shain-landing-page-thanku.html')
+
+def personal_trainer_thanku_link_view(request):
+    if request.method == "POST":
+        return render(request, 'task_landing_pages/personal-trainer-thanku-page.html')
+    return render(request, 'task_landing_pages/personal-trainer-landing-page-thanku.html')
+
+
 
 
 

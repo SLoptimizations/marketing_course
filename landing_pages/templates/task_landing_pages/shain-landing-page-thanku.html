@@ -52,12 +52,13 @@
 								</ul></h2>
 							<p style="direction: rtl; font-size: 3vw; margin-bottom: 29px;" class="text-right">כל הבנים יסתכלו <u>עלייך</u>, לא תפסיקי לקבל <u>מחמאות</u>, תמיד תפציצי באאוטפיט <u>הכי שווה</u> ותוכלי להרשות לעצמך מגוון של בגדים בלי לרוקן את הארנק!</p>
 							<div style="text-align:center;">
-								<a href="https://il.shein.com/">
+								<form method="post">
 									<button class="site-btn float-none" style="
 background-position: center; background-origin: border-box; width: 54%; margin-bottom: 2%;">
 										<span style="font-size: 2vw;">ליחצי כאן</span>
 									</button>
-								</a>
+                                    {% csrf_token %}
+                                </form>
 							</div>
 							<p class="text-center" style="font-size: 22px; margin-bottom: 5%; color: #f40064;"><b style="font-size: 2.5vw;">ותהני ממגוון אפשרויות שיגרמו לך להרגיש הכי מהממת בכל מקום שתהיי</b></p>
 							<p class="text-center" style="font-size: 22px; color: #f40064;"><b style="font-size: 25px;"></b></p>
