@@ -15,6 +15,9 @@ def shein_view(request):
 def nespresso_view(request):
         return render(request, 'task_landing_pages/nespresso-landing-page.html')
 
+def personal_trainer_view(request):
+        return render(request, 'task_landing_pages/personal-trainer-landing-page.html')
+
 
 
 

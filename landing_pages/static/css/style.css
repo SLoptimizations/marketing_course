@@ -143,7 +143,7 @@ Commom elements
     padding: 2%;
     border-radius: 50px;
     text-transform: uppercase;
-    background: #ff5c0b;
+    background: #d00556;
     color: #fff;
     line-height: normal;
     cursor: pointer;
@@ -619,7 +619,7 @@ Hero section
 }
 
 .hs-text p {
-    color: #0a0808;
+    color: #ffffff;
 
     /* font-size: 1.5vw*/
     margin-bottom: 0%;
@@ -1626,7 +1626,7 @@ Contact Page
 }
 
 .bold-text-color {
-    color: #e66622;
+    color: #d60258;
 }
 
 .text-color {
