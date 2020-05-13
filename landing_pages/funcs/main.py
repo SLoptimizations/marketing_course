@@ -41,6 +41,6 @@ def send_mail(to, campaign_json, url_id):
         print("Error, email was not sent")
 
 
-send_mail(to='shovallevi.w@gmail.com',
-
-          campaign_json='landing_pages/funcs/email_settings.json',url_id="ab" )
+# send_mail(to='shovallevi.w@gmail.com',
+#
+#           campaign_json='landing_pages/funcs/email_settings.json',url_id="ab" )

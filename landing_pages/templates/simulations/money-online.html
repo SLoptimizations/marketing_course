@@ -80,12 +80,11 @@ max-width: 900px;" class="col-lg-12">
 													<input type="checkbox" name="send_newsletter" id="send_newsletter" required=""> 
 													<label for="send_newsletter" class="checkbox-rtl">אני מאשר קבלת דיוור פרסומי</label>													 
 												</div>
-                                                <form action="https://www.google.com/">
+
 												<button type="submit" class="site-btn float-none bold-color" style="background-position: center; background-origin: border-box; width: 54%; margin-bottom: 2%; margin-top: 2%;">
 													<span style="font-size: 2vw;">שלח טופס</span>
-                                                    {% csrf_token %}
 												</button>
-                                                    </form>
+
 												{% csrf_token %}
 											</form>
 										</div>										 
