@@ -71,46 +71,46 @@ def money_online_view(request):
         return render(request, 'simulations/money-online.html')
 
 
-# def register(request):
-#     if request.method == "POST":
-#
-#         # info = user_info_form.save(commit=False)
-#         data = request.POST
-#         user = UserInfo(
-#             username=data['username'],
-#             email=data['email'],
-#         )
-#         user.url_id = str(uuid.uuid4()).split('-')[1]
-#
-#         user.save()
-#
-#         send_mail(to=user.email,
-#                   campaign_json='landing_page/funcs/email_settings.json',
-#                   url_id=user.url_id)
-#
-#
-#     else:
-#         return render(request, 'landing_page/about.html')
-#
-#     return render(request, 'landing_page/thanku_page.html')
+def register(request):
+    if request.method == "POST":
+
+        # info = user_info_form.save(commit=False)
+        data = request.POST
+        user = UserInfo(
+            username=data['username'],
+            email=data['email'],
+        )
+        user.url_id = str(uuid.uuid4()).split('-')[1]
+
+        user.save()
+
+        send_mail(to=user.email,
+                  campaign_json='landing_page/funcs/email_settings.json',
+                  url_id=user.url_id)
 
 
-# class VideoPageView(TemplateView):
-#     template_name = 'video_page/video_page.html'
-#
-#     def get(self, request, *args, **kwargs):
-#         url_id = request.GET.get('id', '')
-#         try:
-#             # user_id = int(request.POST['id'])
-#             # user = UserInfo.objects.get(url_id=url_id)
-#             user = UserInfo.objects.all().filter(url_id=url_id)[0]  # .get(url_id=url_id)
-#             user.visits_counter = user.visits_counter + 1
-#             user.save()
-#
-#         except User.DoesNotExist:
-#             return HttpResponseNotFound('<h1>Page not found</h1>')
-#
-#         return render(request, 'video_page/video_page.html')
+    else:
+        return render(request, 'landing_page/about.html')
+
+    return render(request, 'landing_page/thanku_page.html')
+
+
+class VideoPageView(TemplateView):
+    template_name = 'video_page/video_page.html'
+
+    def get(self, request, *args, **kwargs):
+        url_id = request.GET.get('id', '')
+        try:
+            # user_id = int(request.POST['id'])
+            # user = UserInfo.objects.get(url_id=url_id)
+            user = UserInfo.objects.all().filter(url_id=url_id)[0]  # .get(url_id=url_id)
+            user.visits_counter = user.visits_counter + 1
+            user.save()
+
+        except User.DoesNotExist:
+            return HttpResponseNotFound('<h1>Page not found</h1>')
+
+        return render(request, 'video_page/video_page.html')
 
 
 class UnsubscribeView(View):
