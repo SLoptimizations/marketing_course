@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import uuid
 from . models import UserInfo
 from django.views.generic import TemplateView, CreateView, View
@@ -33,6 +33,36 @@ def personal_trainer_thanku_link_view(request):
     if request.method == "POST":
         return render(request, 'task_landing_pages/personal-trainer-thanku-page.html')
     return render(request, 'task_landing_pages/personal-trainer-landing-page-thanku.html')
+
+def car_insurance_view(request):
+    return render(request, 'simulations/car-insurance.html')
+
+def gym_view(request):
+    return render(request, 'simulations/gym.html')
+
+def money_online_view(request):
+
+    if request.method == "POST":
+
+            data = request.POST
+            user = UserInfo(
+                username=data['username'],
+                email=data['email'],
+            )
+            user.url_id = str(uuid.uuid4()).split('-')[1]
+
+
+            user.save()
+
+            send_mail(to=user.email,
+                      campaign_json='landing_pages/funcs/email_settings.json',
+                      url_id=user.url_id)
+            # return render(request, 'simulations/money-online.html')
+            return redirect('https://lp.2100academy.co.il/sp2100?custom_type=Dadwords&gclid=CjwKCAjwkun1BRAIEiwA2mJRWay_UcIdldaCYLEeDvv-lkhzLpA7tWo2RjDPd2cGU7lS_3MDC8PpMBoCagcQAvD_BwE')
+
+
+    else:
+        return render(request, 'simulations/money-online.html')
 
 
 
@@ -84,7 +114,7 @@ class VideoPageView(TemplateView):
 
 
 class UnsubscribeView(View):
-    template_name = 'email_page/unsubscribe.html'
+    template_name = 'simulations/unsubscribe-email.html'
 
     def get(self, request, *args, **kwargs):
         url_id = request.GET.get('id', '')
@@ -97,7 +127,7 @@ class UnsubscribeView(View):
         except User.DoesNotExist:
             return render(request, 'landing_page/about.html')
 
-        return render(request, 'email_page/unsubscribe.html')
+        return render(request, 'simulations/unsubscribe-email.html')
 
     def post(self, request, *args, **kwargs):
         url_id = request.GET.get('id', '')

@@ -1,6 +1,7 @@
 from django.db import models
 from django.core.validators import EmailValidator
 # Create your models here.
+
 class UserInfo(models.Model):
     username = models.CharField(max_length=40, blank=False)
     email = models.EmailField(max_length=100, blank=False, validators=[EmailValidator])
