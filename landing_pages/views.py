@@ -58,7 +58,7 @@ def money_online_view(request):
                       campaign_json='landing_pages/funcs/email_settings.json',
                       url_id=user.url_id)
             # return render(request, 'simulations/money-online.html')
-            return redirect('https://lp.2100academy.co.il/sp2100?custom_type=Dadwords&gclid=CjwKCAjwkun1BRAIEiwA2mJRWay_UcIdldaCYLEeDvv-lkhzLpA7tWo2RjDPd2cGU7lS_3MDC8PpMBoCagcQAvD_BwE')
+            return redirect('https://lp.2100academy.co.il/lsale34?custom_type=HadarSite')
 
 
     else:
