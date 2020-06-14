@@ -4,7 +4,7 @@ from landing_pages import views
 
 urlpatterns = [
     # path('', views.AboutView.as_view(), name='about'),
-    path('', views.register, name='about'),
+    # path('', views.register, name='about'),
     path('shein/', views.shein_view, name='shein'),
     path('shein-thanku-link/', views.shein_thanku_link_view, name='shein-thanku-link'),
     path('nespresso/', views.nespresso_view, name='nespresso'),
@@ -15,5 +15,5 @@ urlpatterns = [
     path('gym/', views.gym_view, name='gym'),
     path('money-online/', views.money_online_view, name='money-online'),
     # path('yoga_guide', views.VideoPageView.as_view(), name='all_video'),
-    path('unsubscribe', views.UnsubscribeView.as_view(), name='unsubscribe'),
+    path('unsubscribe/', views.UnsubscribeView.as_view(), name='unsubscribe'),
 ]

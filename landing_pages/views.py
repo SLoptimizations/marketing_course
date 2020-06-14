@@ -141,8 +141,8 @@ class UnsubscribeView(View):
 
         except User.DoesNotExist as e:
             print(e)
-            return render(request, 'landing_page/about.html')
+            return HttpResponseNotFound('<h1>Page not found</h1>')
         except:
             return HttpResponseNotFound('<h1>Page not found</h1>')
 
-        return render(request, 'email_page/unsubscribe.html')
+        return render(request, 'simulations/resubscribed.html')
